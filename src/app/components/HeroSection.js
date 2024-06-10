@@ -10,56 +10,56 @@ const HeroSection = () => {
     () => {
       let tl = gsap.timeline();
 
+      // gsap.fromTo(
+      //   ".profilePic",
+      //   { scale: 0.5 }, // Starting state
+      //   {
+      //     scale: 1.1, // Ending state
+      //     duration: 1.2, // Duration of the animation
+      //     ease: "power1.in", // Easing function
+      //     repeat: -1, // Infinite repeat
+      //     yoyo: true, // Reverse the animation
+      //   }
+      // );
+
+      tl.to(".line", {
+        duration: 2,
+        height: 0,
+        ease: "power3.inOut",
+        stagger: 0.5,
+      });
+      tl.to(".centerDiv", {
+        opacity: 1,
+        duration: 6,
+      });
+      gsap.fromTo(
+        ".headline",
+        {
+          opacity: 0,
+          delay: 4,
+          duration: 1,
+          y: "50px",
+          ease: "power1.inOut",
+        },
+        {
+          opacity: 1,
+        }
+      );
+
+      tl.to(".mainCover", {
+        opacity: 0,
+        duration: 2,
+        visibility: "hidden",
+        // ease: "steps(4)",
+      });
       tl.from(".animateDiv", {
         opacity: 0,
         y: "-50px",
-        delay: 2,
+        delay: 0,
 
         duration: 2,
         stagger: 0.5,
       });
-      gsap.fromTo(
-        ".profilePic",
-        { scale: 0.5 }, // Starting state
-        {
-          scale: 1.1, // Ending state
-          duration: 1.2, // Duration of the animation
-          ease: "power1.in", // Easing function
-          repeat: -1, // Infinite repeat
-          yoyo: true, // Reverse the animation
-        }
-      );
-
-      // tl.to(".line", {
-      //   duration: 2,
-      //   height: 0,
-      //   ease: "power3.inOut",
-      //   stagger: 0.5,
-      // });
-      // tl.to(".centerDiv", {
-      //   opacity: 1,
-      //   duration: 6,
-      // });
-      // gsap.fromTo(
-      //   ".headline",
-      //   {
-      //     opacity: 0,
-      //     delay: 4,
-      //     duration: 1,
-      //     y: "50px",
-      //     ease: "power1.inOut",
-      //   },
-      //   {
-      //     opacity: 1,
-      //   }
-      // );
-
-      // tl.to(".mainCover", {
-      //   opacity: 0,
-      //   duration: 2,
-      //   visibility: "hidden",
-      //   // ease: "steps(4)",
-      // });
     },
     { scope: container }
   );
@@ -137,7 +137,8 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* <div className=" flex flex-row justify-center items-center absolute mainCover bg-[#171717] inset-0 ">
+      {/* Loader */}
+      <div className=" flex flex-row justify-center items-center absolute mainCover bg-[#171717] inset-0 ">
         <div className="w-3/12 line h-full bg-[#FD853A]"></div>
         <div className="w-3/12  h-full line  bg-[#FD853A]"></div>
         <div className="w-3/12 h-full line bg-[#FD853A]"></div>
@@ -149,7 +150,7 @@ const HeroSection = () => {
             Something Extraordinary is About to Unfold..
           </p>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
