@@ -1,27 +1,94 @@
-import React from "react";
+"use client";
+import { useGSAP } from "@gsap/react";
+import React, { useRef } from "react";
+import { gsap } from "gsap";
+import Loader from "./Loader";
 
 const HeroSection = () => {
+  const container = useRef(null);
+  useGSAP(
+    () => {
+      let tl = gsap.timeline();
+
+      tl.from(".animateDiv", {
+        opacity: 0,
+        y: "-50px",
+        delay: 2,
+
+        duration: 2,
+        stagger: 0.5,
+      });
+      gsap.fromTo(
+        ".profilePic",
+        { scale: 0.5 }, // Starting state
+        {
+          scale: 1.1, // Ending state
+          duration: 1.2, // Duration of the animation
+          ease: "power1.in", // Easing function
+          repeat: -1, // Infinite repeat
+          yoyo: true, // Reverse the animation
+        }
+      );
+
+      // tl.to(".line", {
+      //   duration: 2,
+      //   height: 0,
+      //   ease: "power3.inOut",
+      //   stagger: 0.5,
+      // });
+      // tl.to(".centerDiv", {
+      //   opacity: 1,
+      //   duration: 6,
+      // });
+      // gsap.fromTo(
+      //   ".headline",
+      //   {
+      //     opacity: 0,
+      //     delay: 4,
+      //     duration: 1,
+      //     y: "50px",
+      //     ease: "power1.inOut",
+      //   },
+      //   {
+      //     opacity: 1,
+      //   }
+      // );
+
+      // tl.to(".mainCover", {
+      //   opacity: 0,
+      //   duration: 2,
+      //   visibility: "hidden",
+      //   // ease: "steps(4)",
+      // });
+    },
+    { scope: container }
+  );
+
+  //
   return (
-    <div className="w-full flex flex-col justify-center h-screen bg-[#171717]">
-      <div className="h-full flex  flex-col justify-between items-center ">
+    <div
+      ref={container}
+      className="w-full flex relative flex-col justify-center h-screen bg-[#171717]"
+    >
+      <div className="h-full flex  flex-col justify-between items-center  ">
         <div className="flex flex-col  items-center">
           <div className="relative mt-20 flex flex-col items-center  w-fit self-center ">
-            <p className="text-xl font-semibold  text-center self-center p-2 px-4 rounded-full border-2 border-[#FD853A] text-white">
+            <p className="text-xl animateDiv font-semibold  text-center self-center p-2 px-4 rounded-full border-2 border-[#FD853A] text-white">
               Hello!
             </p>
             <img
               src="/vector.png"
-              className=" w-10 -top-5 absolute -right-10  h-10 object-contain "
+              className=" w-10 -top-5 absolute animateDiv -right-10  h-10 object-contain "
             />
           </div>
-          <p className="text-white font-bold leading-normal text-6xl w-50 text-center">
+          <p className="text-white animateDiv font-bold leading-normal text-6xl w-50 text-center  ">
             I'm <span className="text-[#FD853A]">Sarmad Zaryan</span>,
             <br /> React Native Developer
           </p>
         </div>
 
         <div className=" flex flex-row justify-between w-full px-20 ">
-          <blockquote class="text-xl italic font-semibold text-gray-900 w-4/12 dark:text-white">
+          <blockquote class="text-xl italic animateDiv font-semibold text-gray-900 w-4/12 dark:text-white">
             <svg
               class="w-8 h-8 text-gray-400 dark:text-gray-600 mb-4"
               aria-hidden="true"
@@ -37,7 +104,7 @@ const HeroSection = () => {
             </p>
           </blockquote>
 
-          <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col animateDiv justify-center items-center">
             <div className="flex flex-row gap-x-2 ">
               <img src="/Star.png" className="h-6 w-6 object-contain" />
               <img src="/Star.png" className="h-6 w-6 object-contain" />
@@ -54,7 +121,7 @@ const HeroSection = () => {
         <div className="relative  w-full">
           <img
             src="/img1.jpg"
-            className=" overflow-hidden  w-72 h-72 top-0 absolute left-1/2 transform -translate-x-1/2 -translate-y-28  object-cover rounded-full"
+            className=" profilePic  w-72 h-72 top-0 absolute left-1/2 transform -translate-x-1/2 -translate-y-28  object-cover rounded-full"
           />
           <svg
             className="w-full"
@@ -69,6 +136,20 @@ const HeroSection = () => {
           </svg>
         </div>
       </div>
+
+      {/* <div className=" flex flex-row justify-center items-center absolute mainCover bg-[#171717] inset-0 ">
+        <div className="w-3/12 line h-full bg-[#FD853A]"></div>
+        <div className="w-3/12  h-full line  bg-[#FD853A]"></div>
+        <div className="w-3/12 h-full line bg-[#FD853A]"></div>
+        <div className="w-3/12 h-full line bg-[#FD853A]"></div>
+        <div className="centerDiv opacity-0 absolute inset-0 flex flex-col justify-center items-center">
+          <Loader />
+
+          <p className="text-[#FD853A] headline  font-bold leading-normal text-4xl w-50 text-center">
+            Something Extraordinary is About to Unfold..
+          </p>
+        </div>
+      </div> */}
     </div>
   );
 };

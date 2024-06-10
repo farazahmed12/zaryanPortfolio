@@ -73,3 +73,26 @@
   transform: rotateX(90deg) translateZ(-40px);
   filter: blur(12px);
 }
+
+/* SCROLL BAR */
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #fd853a; /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #171717; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+}
+
+.mainCover {
+  perspective: 1000px; /* Adjust for stronger 3D effect */
+}
+
+.headline {
+  display: inline-block;
+  transform-style: preserve-3d; /* Ensure 3D effect is preserved */
+}
