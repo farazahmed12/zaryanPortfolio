@@ -10,18 +10,6 @@ const HeroSection = () => {
     () => {
       let tl = gsap.timeline();
 
-      // gsap.fromTo(
-      //   ".profilePic",
-      //   { scale: 0.5 }, // Starting state
-      //   {
-      //     scale: 1.1, // Ending state
-      //     duration: 1.2, // Duration of the animation
-      //     ease: "power1.in", // Easing function
-      //     repeat: -1, // Infinite repeat
-      //     yoyo: true, // Reverse the animation
-      //   }
-      // );
-
       tl.to(".line", {
         duration: 2,
         height: 0,
@@ -55,6 +43,14 @@ const HeroSection = () => {
       tl.from(".animateDiv", {
         opacity: 0,
         y: "-50px",
+        delay: 0,
+
+        duration: 2,
+        stagger: 0.5,
+      });
+      tl.from(".waves", {
+        opacity: 0,
+        y: "20px",
         delay: 0,
 
         duration: 2,
@@ -118,13 +114,9 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="relative  w-full">
-          <img
-            src="/img1.jpg"
-            className=" profilePic  w-72 h-72 top-0 absolute left-1/2 transform -translate-x-1/2 -translate-y-28  object-cover rounded-full"
-          />
+        <div className="relative w-full">
           <svg
-            className="w-full"
+            className="w-full waves "
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1440 320"
           >
@@ -134,6 +126,11 @@ const HeroSection = () => {
               d="M0,64L40,90.7C80,117,160,171,240,202.7C320,235,400,245,480,218.7C560,192,640,128,720,112C800,96,880,128,960,138.7C1040,149,1120,139,1200,149.3C1280,160,1360,192,1400,208L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
             ></path>
           </svg>
+          {/* profile pic */}
+          <img
+            src="/img1.jpg"
+            className=" waves w-72 h-72 top-0 absolute left-1/2 transform -translate-x-1/2 -translate-y-28  object-cover rounded-full"
+          />
         </div>
       </div>
 

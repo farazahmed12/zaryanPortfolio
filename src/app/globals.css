@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth !important;
+}
+body {
+  scroll-behavior: smooth !important;
+}
+
 /* LOADER */
 .pyramid-loader {
   position: relative;
