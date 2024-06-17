@@ -3,10 +3,13 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Card from "./Card";
 
 gsap.registerPlugin(ScrollTrigger);
 const ThirdSection = () => {
   const cont = useRef(null);
+  const containerRef = useRef(null);
+
   useGSAP(
     () => {
       let tl = gsap.timeline({
@@ -51,15 +54,25 @@ const ThirdSection = () => {
           },
         }
       );
+
+      gsap.to(".rowScroll", {
+        x: () => `-${75 * 10}vw`,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".rowScroll",
+          start: "top 50%",
+          end: "bottom -100%",
+          pin: true,
+          scrub: 3,
+        },
+      });
     },
     { scope: cont }
   );
+
   return (
     <div ref={cont} className="h-screen w-ful">
-      <div
-        // ref={cont}
-        className="h-screen w-full z-50 overflow-hidden  mainCover bg-white"
-      >
+      <div className="h-screen w-full z-50 overflow-hidden flex flex-col justify-between  mainCover bg-white">
         <h1 className="text-black text-[17vw] uppercase heading whitespace-nowrap gap-x-10 font-medium  leading-normal">
           <span className="letter">P</span>
           <span className="letter">o</span>
@@ -71,6 +84,21 @@ const ThirdSection = () => {
           <span className="letter">i</span>
           <span className="letter">o</span>
         </h1>
+
+        <div
+          style={{ width: "max-content" }}
+          ref={containerRef}
+          className="flex rowScroll flex-row gap-x-20  bg-yellow-400 justify-between items-center  "
+        >
+          <Card title={1} />
+          <Card title={2} />
+          <Card title={3} />
+          <Card title={4} />
+          <Card title={5} />
+          <Card title={6} />
+        </div>
+
+        <div></div>
       </div>
     </div>
   );

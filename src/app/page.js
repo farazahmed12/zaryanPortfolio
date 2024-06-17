@@ -10,6 +10,7 @@ export default function Home() {
       <HeroSection />
       <SecondSection />
       <ThirdSection />
+      <SecondSection />
     </>
   );
 }
