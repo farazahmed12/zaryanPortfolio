@@ -83,16 +83,18 @@ body {
 
 /* SCROLL BAR */
 body::-webkit-scrollbar {
-  width: 12px; /* width of the entire scrollbar */
+  width: 0px; /* width of the entire scrollbar */
 }
 
 body::-webkit-scrollbar-track {
-  background: #fd853a; /* color of the tracking area */
+  background: white; /* color of the tracking area */
+  width: 0px;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #171717; /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
+  width: 0px;
+  background-color: transparent; /* color of the scroll thumb */
+  border-radius: 0; /* roundness of the scroll thumb */
 }
 
 .mainCover {
