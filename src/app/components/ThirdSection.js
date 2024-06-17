@@ -14,7 +14,6 @@ const ThirdSection = () => {
         start: "top 500px",
         end: "+=300",
         scrub: 5,
-        markers: true,
       },
     });
 
