@@ -135,7 +135,7 @@ const HeroSection = () => {
       </div>
 
       {/* Loader */}
-      <div className=" flex flex-row justify-center items-center absolute mainCover bg-[#171717] inset-0 ">
+      <div className=" flex flex-row justify-center items-center absolute mainCover  bg-[#171717] inset-0 ">
         <div className="w-3/12 line h-full bg-[#FD853A]"></div>
         <div className="w-3/12  h-full line  bg-[#FD853A]"></div>
         <div className="w-3/12 h-full line bg-[#FD853A]"></div>
