@@ -46,13 +46,11 @@ const ThirdSection = () => {
       let tl = gsap.timeline({
         scrollTrigger: {
           trigger: ".mainCover",
-          // start: "250% 100%",
-          // end: "-20% -100%",
           start: "top top",
-          end: "-50% -100%",
-          scrub: 5,
-          pin: true,
-          // markers: true,
+          // end: "+=200",
+          // end: "bottom bottom",
+          scrub: 2,
+          // pin: true,
         },
       });
 
@@ -78,7 +76,7 @@ const ThirdSection = () => {
           ease: "power1.inOut",
           scrollTrigger: {
             trigger: ".heading",
-            start: "-20%' top",
+            start: "-20% top",
             end: "bottom bottom",
             scrub: 5,
             toggleActions: "play reverse play reverse",
@@ -89,21 +87,22 @@ const ThirdSection = () => {
       const container = containerRef.current;
       const projectsLength = projectsArray?.length || 0;
 
-      console.log("container.scrollWidth", container.scrollWidth);
-      console.log(" window.innerWidth", window.innerWidth);
+      console.log(" window.innerWidth", window.innerWidth * window.innerWidth);
 
       gsap.to(".rowScroll", {
-        // x: () => `-${80 * projectsArray?.length}vw`,
-        x: () => `-${container.scrollWidth - window.innerWidth}vw`,
+        x: () => `-${container.scrollWidth - window.innerWidth + 100}px`,
+        stagger: 0.5,
+        ease: "power1.inOut",
+
         ease: "none",
         scrollTrigger: {
-          trigger: ".rowScroll",
-          start: "top 35%",
-          // end: "bottom -100%",
-          end: () => `+=${container.scrollWidth - window.innerWidth}`,
+          trigger: ".superCont",
+          start: "top top",
+          // end: "bottom -50%",
+          scrub: 2,
           pin: true,
-          scrub: 5,
           markers: true,
+          // toggleActions: "play reverse play reverse",
         },
       });
     },
@@ -111,38 +110,40 @@ const ThirdSection = () => {
   );
 
   return (
-    <div ref={cont} className="h-screen w-ful">
-      <div className="h-screen w-full z-50 overflow-hidden flex flex-col justify-between  mainCover bg-[#000000]">
-        <h1 className="text-black text-[17vw] uppercase heading whitespace-nowrap gap-x-10 font-medium  leading-normal">
-          <span className="letter">P</span>
-          <span className="letter">o</span>
-          <span className="letter">r</span>
-          <span className="letter">t</span>
-          <span className="letter">f</span>
-          <span className="letter">o</span>
-          <span className="letter">l</span>
-          <span className="letter">i</span>
-          <span className="letter">o</span>
-        </h1>
+    <div ref={cont} className="h-full w-full">
+      <div className="superCont">
+        <div className="h-screen w-full z-50 overflow-hidden flex flex-col justify-between  mainCover bg-[#000000]">
+          <h1 className="text-black text-[17vw] uppercase heading whitespace-nowrap gap-x-10 font-medium  leading-normal">
+            <span className="letter">P</span>
+            <span className="letter">o</span>
+            <span className="letter">r</span>
+            <span className="letter">t</span>
+            <span className="letter">f</span>
+            <span className="letter">o</span>
+            <span className="letter">l</span>
+            <span className="letter">i</span>
+            <span className="letter">o</span>
+          </h1>
 
-        <div
-          style={{ width: "max-content" }}
-          ref={containerRef}
-          className="flex rowScroll flex-row gap-x-10 ml-10 xScroll justify-evenly items-center  "
-        >
-          {projectsArray?.map((item) => {
-            return (
-              <Card
-                title={item?.title}
-                desc={item?.desc}
-                img={item?.img}
-                key={item?.title}
-              />
-            );
-          })}
+          <div
+            style={{ width: "max-content" }}
+            ref={containerRef}
+            className="flex rowScroll flex-row gap-x-10 ml-10 py-5 justify-evenly items-center  "
+          >
+            {projectsArray?.map((item) => {
+              return (
+                <Card
+                  title={item?.title}
+                  desc={item?.desc}
+                  img={item?.img}
+                  key={item?.title}
+                />
+              );
+            })}
+          </div>
+
+          <div></div>
         </div>
-
-        <div></div>
       </div>
     </div>
   );
