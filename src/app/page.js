@@ -7,15 +7,15 @@ import ThirdSection from "./components/ThirdSection";
 import { useEffect } from "react";
 
 export default function Home() {
-  useEffect(() => {
-    if (document) {
-      document.body.style.overflow = "hidden";
+  // useEffect(() => {
+  //   if (document) {
+  //     document.body.style.overflow = "hidden";
 
-      setTimeout(() => {
-        document.body.style.overflow = "auto";
-      }, 8000);
-    }
-  }, []);
+  //     setTimeout(() => {
+  //       document.body.style.overflow = "auto";
+  //     }, 8000);
+  //   }
+  // }, []);
   return (
     <>
       <HeroSection />

@@ -6,9 +6,40 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Card from "./Card";
 
 gsap.registerPlugin(ScrollTrigger);
+
 const ThirdSection = () => {
   const cont = useRef(null);
   const containerRef = useRef(null);
+
+  // projects Array
+  const projectsArray = [
+    {
+      title: "Oneday.ae App",
+      desc: `OneDay.ae is a user-friendly e-commerce app designed to revolutionize online shopping in the UAE. Built with React Native, the app`,
+      img: "/oneday.png",
+    },
+    {
+      title: "24/7 Car Wash App",
+      desc: `24/7 Car Wash is a modern app designed to provide round-the-clock car wash services at your convenience. With an easy-to-use interface and reliable service providers, keeping your car clean has never been more accessible.`,
+      img: "/carwash.png",
+    },
+    {
+      title: "Connect Date App",
+      desc: `Connect Date is a dynamic dating platform designed to help people forge meaningful connections. With intuitive features and a vibrant community, it makes finding companionship easy and enjoyable, bringing like-minded individuals together.`,
+      img: "/connectDate.png",
+    },
+    {
+      title: "Pak Auto Zone App ",
+      desc: `Pak Auto Zone is an innovative app dedicated to simplifying car buying and selling. With a user-friendly interface and a vast selection of vehicles, it revolutionizes the auto trade in Pakistan, making transactions seamless and efficient.`,
+      img: "/pakauto.png",
+    },
+
+    {
+      title: "Emedz Doctors Appointment App",
+      desc: `Emedz Doctors Appointment App is a cutting-edge platform designed to streamline the process of scheduling medical appointments. With a user-friendly interface and robust features, it connects patients with healthcare professionals efficiently and conveniently.`,
+      img: "/emedz.png",
+    },
+  ];
 
   useGSAP(
     () => {
@@ -21,7 +52,7 @@ const ThirdSection = () => {
           end: "-20% -100%",
           scrub: 5,
           pin: true,
-          markers: true,
+          // markers: true,
         },
       });
 
@@ -55,15 +86,23 @@ const ThirdSection = () => {
         }
       );
 
+      const container = containerRef.current;
+      const projectsLength = projectsArray?.length || 0;
+
+      console.log("container.scrollWidth", container.scrollWidth);
+
       gsap.to(".rowScroll", {
-        x: () => `-${75 * 10}vw`,
+        // x: () => `-${80 * projectsArray?.length}vw`,
+        x: () => `-${container.scrollWidth - window.innerWidth}vw`,
         ease: "none",
         scrollTrigger: {
           trigger: ".rowScroll",
-          start: "top 50%",
-          end: "bottom -100%",
+          start: "top 35%",
+          // end: "bottom -100%",
+          end: () => `+=${container.scrollWidth - window.innerWidth}px`,
           pin: true,
           scrub: 3,
+          markers: true,
         },
       });
     },
@@ -88,14 +127,18 @@ const ThirdSection = () => {
         <div
           style={{ width: "max-content" }}
           ref={containerRef}
-          className="flex rowScroll flex-row gap-x-20  bg-yellow-400 justify-between items-center  "
+          className="flex rowScroll flex-row gap-x-10 justify-evenly items-center  "
         >
-          <Card title={1} />
-          <Card title={2} />
-          <Card title={3} />
-          <Card title={4} />
-          <Card title={5} />
-          <Card title={6} />
+          {projectsArray?.map((item) => {
+            return (
+              <Card
+                title={item?.title}
+                desc={item?.desc}
+                img={item?.img}
+                key={item?.title}
+              />
+            );
+          })}
         </div>
 
         <div></div>

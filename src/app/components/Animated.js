@@ -64,7 +64,7 @@ const AnimatedComponent = () => {
           end: "+=1000",
           scrub: 1,
           pin: true,
-          markers: true,
+          // markers: true,
         },
       });
 
