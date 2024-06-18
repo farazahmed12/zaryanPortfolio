@@ -102,7 +102,7 @@ const ThirdSection = () => {
           // end: "bottom -100%",
           end: () => `+=${container.scrollWidth - window.innerWidth}`,
           pin: true,
-          scrub: 3,
+          scrub: 5,
           markers: true,
         },
       });
@@ -128,7 +128,7 @@ const ThirdSection = () => {
         <div
           style={{ width: "max-content" }}
           ref={containerRef}
-          className="flex rowScroll flex-row gap-x-10 ml-10 justify-evenly items-center  "
+          className="flex rowScroll flex-row gap-x-10 ml-10 xScroll justify-evenly items-center  "
         >
           {projectsArray?.map((item) => {
             return (

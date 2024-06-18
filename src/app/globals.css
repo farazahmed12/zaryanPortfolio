@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth !important;
-}
-body {
-  scroll-behavior: smooth !important;
-}
-
 /* LOADER */
 .pyramid-loader {
   position: relative;
@@ -104,4 +97,8 @@ body::-webkit-scrollbar-thumb {
 .headline {
   display: inline-block;
   transform-style: preserve-3d; /* Ensure 3D effect is preserved */
+}
+
+.xScroll {
+  scroll-behavior: smooth !important;
 }
