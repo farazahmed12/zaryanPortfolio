@@ -2,7 +2,7 @@ import React from "react";
 
 const Card = ({ title, desc, img }) => {
   return (
-    <div className="flex flex-col  w-[80vw] min-h-72   rounded-lg overflow-hidden  md:flex-row">
+    <div className="flex flex-col  w-[80vw] min-h-72  shadow-lg rounded-lg overflow-hidden  md:flex-row">
       <img
         className="object-cover w-[45%] rounded-t-lg h-full"
         src={img}

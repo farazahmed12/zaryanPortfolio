@@ -49,7 +49,7 @@ const ThirdSection = () => {
           // start: "250% 100%",
           // end: "-20% -100%",
           start: "top top",
-          end: "-20% -100%",
+          end: "-50% -100%",
           scrub: 5,
           pin: true,
           // markers: true,
@@ -57,11 +57,11 @@ const ThirdSection = () => {
       });
 
       tl.to(".mainCover", {
-        backgroundColor: "#f05213",
+        backgroundColor: "#000080",
         duration: 1.5,
       })
-        .to(".mainCover", { backgroundColor: "#a6f013", duration: 1.5 })
-        .to(".mainCover", { backgroundColor: "#1338f0", duration: 1.5 })
+        .to(".mainCover", { backgroundColor: "#228B22", duration: 1.5 })
+        .to(".mainCover", { backgroundColor: "#4B0082", duration: 1.5 })
         .to(".mainCover", { backgroundColor: "#000000", duration: 1.5 });
 
       gsap.fromTo(
@@ -90,6 +90,7 @@ const ThirdSection = () => {
       const projectsLength = projectsArray?.length || 0;
 
       console.log("container.scrollWidth", container.scrollWidth);
+      console.log(" window.innerWidth", window.innerWidth);
 
       gsap.to(".rowScroll", {
         // x: () => `-${80 * projectsArray?.length}vw`,
@@ -99,7 +100,7 @@ const ThirdSection = () => {
           trigger: ".rowScroll",
           start: "top 35%",
           // end: "bottom -100%",
-          end: () => `+=${container.scrollWidth - window.innerWidth}px`,
+          end: () => `+=${container.scrollWidth - window.innerWidth}`,
           pin: true,
           scrub: 3,
           markers: true,
@@ -111,7 +112,7 @@ const ThirdSection = () => {
 
   return (
     <div ref={cont} className="h-screen w-ful">
-      <div className="h-screen w-full z-50 overflow-hidden flex flex-col justify-between  mainCover bg-white">
+      <div className="h-screen w-full z-50 overflow-hidden flex flex-col justify-between  mainCover bg-[#000000]">
         <h1 className="text-black text-[17vw] uppercase heading whitespace-nowrap gap-x-10 font-medium  leading-normal">
           <span className="letter">P</span>
           <span className="letter">o</span>
@@ -127,7 +128,7 @@ const ThirdSection = () => {
         <div
           style={{ width: "max-content" }}
           ref={containerRef}
-          className="flex rowScroll flex-row gap-x-10 justify-evenly items-center  "
+          className="flex rowScroll flex-row gap-x-10 ml-10 justify-evenly items-center  "
         >
           {projectsArray?.map((item) => {
             return (
