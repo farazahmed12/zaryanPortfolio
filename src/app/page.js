@@ -7,15 +7,15 @@ import { useEffect } from "react";
 import ForthSection from "./components/ForthSection";
 
 export default function Home() {
-  // useEffect(() => {
-  //   if (document) {
-  //     document.body.style.overflow = "hidden";
+  useEffect(() => {
+    if (document) {
+      document.body.style.overflow = "hidden";
 
-  //     setTimeout(() => {
-  //       document.body.style.overflow = "auto";
-  //     }, 10000);
-  //   }
-  // }, []);
+      setTimeout(() => {
+        document.body.style.overflow = "auto";
+      }, 10000);
+    }
+  }, []);
   return (
     <>
       <HeroSection />

@@ -101,7 +101,6 @@ const ThirdSection = () => {
           // end: "bottom -50%",
           scrub: 2,
           pin: true,
-          markers: true,
           // toggleActions: "play reverse play reverse",
         },
       });
