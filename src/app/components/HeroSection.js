@@ -64,7 +64,7 @@ const HeroSection = () => {
   return (
     <div
       ref={container}
-      className="w-full flex relative flex-col justify-center h-screen bg-[#000000]"
+      className="w-full flex relative flex-col justify-center overflow-hidden h-screen bg-[#000000]"
     >
       <div className="h-full flex  flex-col justify-between items-center  ">
         <div className="flex flex-col  items-center">
@@ -73,6 +73,7 @@ const HeroSection = () => {
               Hello!
             </p>
             <img
+              alt="this is vector image"
               src="/vector.png"
               className=" w-10 -top-5 absolute animateDiv -right-10  h-10 object-contain "
             />
@@ -84,9 +85,9 @@ const HeroSection = () => {
         </div>
 
         <div className=" flex flex-row justify-between w-full px-20 ">
-          <blockquote class="text-xl italic animateDiv font-semibold text-gray-900 w-4/12 ">
+          <blockquote className="text-xl italic animateDiv font-semibold text-gray-900 w-4/12 ">
             <svg
-              class="w-8 h-8 text-gray-400 dark:text-gray-600 mb-4"
+              className="w-8 h-8 text-gray-400 dark:text-gray-600 mb-4"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="#FD853A"
@@ -102,11 +103,31 @@ const HeroSection = () => {
 
           <div className="flex flex-col animateDiv justify-center items-center">
             <div className="flex flex-row gap-x-2 ">
-              <img src="/Star.png" className="h-6 w-6 object-contain" />
-              <img src="/Star.png" className="h-6 w-6 object-contain" />
-              <img src="/Star.png" className="h-6 w-6 object-contain" />
-              <img src="/Star.png" className="h-6 w-6 object-contain" />
-              <img src="/Star.png" className="h-6 w-6 object-contain" />
+              <img
+                alt="this is star image"
+                src="/Star.png"
+                className="h-6 w-6 object-contain"
+              />
+              <img
+                alt="this is star image"
+                src="/Star.png"
+                className="h-6 w-6 object-contain"
+              />
+              <img
+                alt="this is star image"
+                src="/Star.png"
+                className="h-6 w-6 object-contain"
+              />
+              <img
+                alt="this is star image"
+                src="/Star.png"
+                className="h-6 w-6 object-contain"
+              />
+              <img
+                alt="this is star image"
+                src="/Star.png"
+                className="h-6 w-6 object-contain"
+              />
             </div>
             <p className="text-xl font-semibold text-center  self-center p-2 px-4 rounded-full text-white">
               10 Years Experience
@@ -128,6 +149,7 @@ const HeroSection = () => {
           </svg>
           {/* profile pic */}
           <img
+            alt="this is wave svg image"
             src="/img1.jpg"
             className=" waves w-72 h-72 top-0 absolute left-1/2 transform -translate-x-1/2 -translate-y-28  object-cover rounded-full"
           />

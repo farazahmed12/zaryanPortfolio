@@ -117,12 +117,12 @@ const ForthSection = () => {
       {/* form */}
       <div className="w-[50%]  self-center letter relative p-8 bg-transparent border  rounded-lg shadow-[#ffffff] shadow-lg">
         {/* name */}
-        <div class="mb-5">
-          <label class="block mb-2 text-sm text-white ">Your Name</label>
+        <div className="mb-5">
+          <label className="block mb-2 text-sm text-white ">Your Name</label>
           <input
             type="text"
             id="email"
-            class={`  bg-[#080808] placeholder-gray-500 text-white text-sm rounded-lg block w-full p-2.5 ${
+            className={`  bg-[#080808] placeholder-gray-500 text-white text-sm rounded-lg block w-full p-2.5 ${
               formik?.errors.name &&
               formik.touched.name &&
               "border border-red-600"
@@ -137,12 +137,12 @@ const ForthSection = () => {
           )}
         </div>
         {/* Subject */}
-        <div class="mb-5">
-          <label class="block mb-2 text-sm text-white ">Subject</label>
+        <div className="mb-5">
+          <label className="block mb-2 text-sm text-white ">Subject</label>
           <input
             type="text"
             id="text"
-            class={`  bg-[#080808] placeholder-gray-500 text-white text-sm rounded-lg block w-full p-2.5 ${
+            className={`  bg-[#080808] placeholder-gray-500 text-white text-sm rounded-lg block w-full p-2.5 ${
               formik?.errors.subject &&
               formik.touched.subject &&
               "border border-red-600"
@@ -157,12 +157,12 @@ const ForthSection = () => {
           )}
         </div>
         {/* email */}
-        <div class="mb-5">
-          <label class="block mb-2 text-sm text-white ">Email</label>
+        <div className="mb-5">
+          <label className="block mb-2 text-sm text-white ">Email</label>
           <input
             type="email"
             id="email"
-            class={`  bg-[#080808] placeholder-gray-500 text-white text-sm rounded-lg block w-full p-2.5 ${
+            className={`  bg-[#080808] placeholder-gray-500 text-white text-sm rounded-lg block w-full p-2.5 ${
               formik?.errors.email &&
               formik.touched.email &&
               "border border-red-600"
@@ -177,12 +177,12 @@ const ForthSection = () => {
           )}
         </div>
         {/* message */}
-        <div class="mb-5">
-          <label class="block mb-2 text-sm text-white ">Your Message</label>
+        <div className="mb-5">
+          <label className="block mb-2 text-sm text-white ">Your Message</label>
           <textarea
             id="message"
             rows="4"
-            class={`block p-2.5 w-full text-sm placeholder-gray-500 text-white bg-[#080808] rounded-lg  ${
+            className={`block p-2.5 w-full text-sm placeholder-gray-500 text-white bg-[#080808] rounded-lg  ${
               formik?.errors.message &&
               formik.touched.message &&
               "border border-red-600"
