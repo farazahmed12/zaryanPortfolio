@@ -64,7 +64,7 @@ const HeroSection = () => {
   return (
     <div
       ref={container}
-      className="w-full flex relative flex-col justify-center h-screen bg-[#171717]"
+      className="w-full flex relative flex-col justify-center h-screen bg-[#000000]"
     >
       <div className="h-full flex  flex-col justify-between items-center  ">
         <div className="flex flex-col  items-center">
@@ -84,7 +84,7 @@ const HeroSection = () => {
         </div>
 
         <div className=" flex flex-row justify-between w-full px-20 ">
-          <blockquote class="text-xl italic animateDiv font-semibold text-gray-900 w-4/12 dark:text-white">
+          <blockquote class="text-xl italic animateDiv font-semibold text-gray-900 w-4/12 ">
             <svg
               class="w-8 h-8 text-gray-400 dark:text-gray-600 mb-4"
               aria-hidden="true"
@@ -135,17 +135,13 @@ const HeroSection = () => {
       </div>
 
       {/* Loader */}
-      <div className=" flex flex-row justify-center items-center absolute mainCover  bg-[#171717] inset-0 ">
+      <div className="flex flex-row justify-center items-center absolute mainCover bg-[#000000] inset-0">
         <div className="w-3/12 line h-full bg-[#FD853A]"></div>
-        <div className="w-3/12  h-full line  bg-[#FD853A]"></div>
+        <div className="w-3/12 h-full line bg-[#FD853A]"></div>
         <div className="w-3/12 h-full line bg-[#FD853A]"></div>
         <div className="w-3/12 h-full line bg-[#FD853A]"></div>
         <div className="centerDiv opacity-0 absolute inset-0 flex flex-col justify-center items-center">
           <Loader />
-
-          <p className="text-[#FD853A] headline  font-bold leading-normal text-4xl w-50 text-center">
-            Something Extraordinary is About to Unfold..
-          </p>
         </div>
       </div>
     </div>

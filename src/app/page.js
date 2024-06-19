@@ -3,25 +3,31 @@ import Image from "next/image";
 import HeroSection from "./components/HeroSection";
 import SecondSection from "./components/SecondSection";
 import ThirdSection from "./components/ThirdSection";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ForthSection from "./components/ForthSection";
 
 export default function Home() {
-  useEffect(() => {
-    if (document) {
-      document.body.style.overflow = "hidden";
+  const [disableScroll, setDisableScroll] = useState(true);
 
-      setTimeout(() => {
-        document.body.style.overflow = "auto";
-      }, 10000);
-    }
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setDisableScroll(false);
+    }, 12000); // Disable scroll after 10 seconds
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, []);
   return (
     <>
       <HeroSection />
-      <SecondSection />
-      <ThirdSection />
-      <ForthSection />
+      {!disableScroll && (
+        <>
+          <SecondSection />
+          <ThirdSection />
+          <ForthSection />
+        </>
+      )}
     </>
   );
 }
